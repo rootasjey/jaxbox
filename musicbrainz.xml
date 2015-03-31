@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata created="2015-03-30T21:38:41.805Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ext="http://musicbrainz.org/ns/ext#-2.0">
+<artist-list count="186" offset="0">
+<artist id="8ef1df30-ae4f-4dbd-9351-1a32b208a01e" type="Person" ext:score="100">
+<name>Alicia Keys</name>
+<sort-name>Keys, Alicia</sort-name>
+<gender>female</gender>
+<country>US</country>
+<area id="489ce91b-6658-3307-9877-795b68554c98">
+<name>United States</name>
+<sort-name>United States</sort-name>
+</area>
+<begin-area id="261962ea-d8c2-4eaf-a80c-f14376ffadb0">
+<name>Manhattan</name>
+<sort-name>Manhattan</sort-name>
+</begin-area>
+<ipi-list>
+<ipi>00340374487</ipi>
+<ipi>00340374389</ipi>
+</ipi-list>
+<life-span>
+<begin>1981-01-25</begin>
+<ended>false</ended>
+</life-span>
+<alias-list>
+<alias sort-name="????????">????????</alias>
+<alias sort-name="Alica Keys" type="Search hint">Alica Keys</alias>
+<alias sort-name="Augello Cook, Alicia" type="Legal name">Alicia Augello Cook</alias>
+<alias sort-name="Alicia Keyes" type="Search hint">Alicia Keyes</alias>
+</alias-list>
+<tag-list>
+<tag count="1">
+<name>american</name>
+</tag>
+<tag count="1">
+<name>singer</name>
+</tag>
+<tag count="1">
+<name>soul</name>
+</tag>
+<tag count="2">
+<name>rnb</name>
+</tag>
+<tag count="1">
+<name>pianist</name>
+</tag>
+<tag count="1">
+<name>neo soul</name>
+</tag>
+<tag count="1">
+<name>hip hop rnb and dance hall</name>
+</tag>
+<tag count="1">
+<name>r&amp;b</name>
+</tag>
+</tag-list>
+</artist>
+<artist id="61bd885f-f3a3-4a4f-85da-9244271d3f5a" ext:score="39">
+<name>Alicia</name>
+<sort-name>Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="3fb36daa-d22f-43c1-8baf-8b5b839c535c" type="Person" ext:score="39">
+<name>Alicia</name>
+<sort-name>Alicia</sort-name>
+<gender>female</gender>
+<country>IT</country>
+<area id="c6500277-9a3d-349b-bf30-41afdbf42add">
+<name>Italy</name>
+<sort-name>Italy</sort-name>
+</area>
+<disambiguation>italian singer</disambiguation>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="cb406bf2-0cae-4923-b96f-8215df1146a9" ext:score="37">
+<name>K.E.Y.S</name>
+<sort-name>K.E.Y.S</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="134a5513-6d21-4b91-9b11-3d608ffb2127" type="Person" ext:score="37">
+<name>Keys</name>
+<sort-name>Keys</sort-name>
+<disambiguation>turntablist</disambiguation>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="6f037627-9f60-4707-b166-7f3c0a75746e" type="Person" ext:score="25">
+<name>Alicia Villarreal</name>
+<sort-name>Villarreal, Alicia</sort-name>
+<gender>female</gender>
+<country>MX</country>
+<area id="3e08b2cd-69f3-317c-b1e4-e71be581839e">
+<name>Mexico</name>
+<sort-name>Mexico</sort-name>
+</area>
+<life-span>
+<begin>1974-08-31</begin>
+<ended>false</ended>
+</life-span>
+<alias-list>
+<alias sort-name="Alicia Villareal">Alicia Villareal</alias>
+</alias-list>
+</artist>
+<artist id="a1e35d2e-baa0-4c29-853b-eaaa1b694229" ext:score="25">
+<name>Alicia Myers</name>
+<sort-name>Myers, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+<alias-list>
+<alias sort-name="Alicia Meyers">Alicia Meyers</alias>
+</alias-list>
+</artist>
+<artist id="aa6b90a8-ba0a-4fec-bfdc-e7d3382cdb1a" ext:score="25">
+<name>Alicia Sí</name>
+<sort-name>Alicia Sí</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+<alias-list>
+<alias sort-name="Alicia Si">Alicia Si</alias>
+</alias-list>
+</artist>
+<artist id="91fd8fe4-1747-488b-8888-2154f470881e" ext:score="24">
+<name>Alicia BB</name>
+<sort-name>Alicia BB</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="61d9e58c-efd1-4255-b608-96fda3790e4a" ext:score="24">
+<name>Alicia Barklay</name>
+<sort-name>Barklay, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="e4fd7930-8638-4005-b7f9-e694c978e515" ext:score="24">
+<name>Alicia Real</name>
+<sort-name>Alicia Real</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="c1cc3cd7-6703-457f-a4d6-991ff1b26ddb" type="Person" ext:score="24">
+<name>Alicia Alemán</name>
+<sort-name>Alicia Alemán</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+<tag-list>
+<tag count="1">
+<name>ambient</name>
+</tag>
+<tag count="1">
+<name>songwriter</name>
+</tag>
+</tag-list>
+</artist>
+<artist id="ab3947fb-3206-4626-a34d-35f25a2ae4f7" type="Person" ext:score="24">
+<name>Alicia Gil</name>
+<sort-name>Alicia Gil</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="1c4b122a-75b9-49cb-b2ac-9392f96f0261" type="Person" ext:score="24">
+<name>Corinne Alicia</name>
+<sort-name>Alicia, Corinne</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="2936c310-bc38-4694-97d5-01782b1cf49b" ext:score="24">
+<name>Alicia Wiley</name>
+<sort-name>Wiley, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="e427abaa-399e-49a6-b26c-8fe1c9db3d31" type="Person" ext:score="24">
+<name>Nicole Alicia</name>
+<sort-name>Alicia, Nicole</sort-name>
+<gender>female</gender>
+<country>US</country>
+<area id="489ce91b-6658-3307-9877-795b68554c98">
+<name>United States</name>
+<sort-name>United States</sort-name>
+</area>
+<life-span>
+<begin>1989</begin>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="5de7cd2e-8de3-40f0-8420-324d8d3d4fd4" ext:score="24">
+<name>Alicia Blue</name>
+<sort-name>Blue, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="5460c129-cb23-4c24-a383-feb9cc34ea05" ext:score="24">
+<name>Alicia Kapel</name>
+<sort-name>Kapel, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="5e34ca03-7de0-4d14-9a13-cd1dbbe03b5a" ext:score="24">
+<name>Alicia Madison</name>
+<sort-name>Madison, Alicia</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="aa1837aa-b7ab-4a06-8534-12bf1655076b" ext:score="24">
+<name>Alicia Steele</name>
+<sort-name>Alicia Steele</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="473907dc-cb91-4cf2-bbb0-f46ce4571697" ext:score="24">
+<name>Alicia Melina</name>
+<sort-name>Melina, Alicia</sort-name>
+<disambiguation>Trance</disambiguation>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="6df311dd-ee55-47bf-858a-577ead609419" type="Person" ext:score="24">
+<name>Peter Keys</name>
+<sort-name>Keys, Peter</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="1746eeaa-e184-48b2-98fd-1d075bf8a877" type="Person" ext:score="24">
+<name>Amy Keys</name>
+<sort-name>Keys, Amy</sort-name>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="1734befd-fcaf-4b61-96d2-0f462504dd9d" type="Person" ext:score="24">
+<name>John Keys</name>
+<sort-name>Keys, John</sort-name>
+<gender>male</gender>
+<country>GB</country>
+<area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+<name>United Kingdom</name>
+<sort-name>United Kingdom</sort-name>
+</area>
+<disambiguation>organist</disambiguation>
+<life-span>
+<begin>1956-12-03</begin>
+<ended>false</ended>
+</life-span>
+</artist>
+<artist id="f0bd533b-1359-4424-be9f-879af504848f" type="Person" ext:score="24">
+<name>Whitney Keys</name>
+<sort-name>Keys, Whitney</sort-name>
+<gender>female</gender>
+<life-span>
+<ended>false</ended>
+</life-span>
+</artist>
+</artist-list>
+</metadata>
