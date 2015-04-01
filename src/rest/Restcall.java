@@ -1,7 +1,7 @@
 package rest;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation.Builder;
@@ -17,15 +17,44 @@ import org.xml.sax.SAXException;
  * A Java Class to send API calls
  */
 public class Restcall {
-
+	private Lastfm lastfm = null;
+	private Musicbrainz musicbrainz = null;
+	
+	// Initialize API Objects
 	public Restcall() {
+		this.lastfm = new Lastfm();
+		this.musicbrainz = new Musicbrainz();
+	}
+	
+	// Send a query to musicbrainz
+	public String queryMusicbrainz(String type, String query, String limit, String offset) {
+		String api = this.musicbrainz.search(type, query, limit, offset);
+		return api;
+	}
+	
+	// Send a query to lastfm
+	public String queryLastfm(String type, String query, String limit, String offset) {
+		String api = this.lastfm.search(type, query, limit, offset);
+		return api;
+	}
+	
+	// Build the query string which will be sent to the API
+	public String buildQuery(String source, String type, String query, String limit, String offset) {
+		if (source.equals("musicbrainz")) {
+			return queryMusicbrainz(type, query, limit, offset);
+		} else if (source.equals("lastfm")) {
+			return queryLastfm(type, query, limit, offset);
+		}
+		return null;
 	}
 	
 	// Query the API
 	public void search() throws ParserConfigurationException, SAXException, IOException {
 		Client client = ClientBuilder.newClient();
 		
-		String api = buildQuery("artist", "Alicia Keys", null, null);
+//		String source = "musicbrainz";
+		String source = "lastfm";
+		String api = buildQuery(source, "album", "Alicia Keys", "25", null);
 		System.out.println(api);
 		
 		WebTarget resource = client.target(api);
@@ -40,47 +69,15 @@ public class Restcall {
 		    System.out.println("Success! " + response.getStatus());
 		    System.out.println(response.getEntity());
 		    String input = response.readEntity(String.class);
-
 		    
-//		    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//		    DocumentBuilder builder = factory.newDocumentBuilder();
-//		    Document document =  builder.parse(new org.xml.sax.InputSource(new StringReader(input)));
-		    
-		    
-		    input = input.replace("><", ">\n<");
-		    PrintWriter out = new PrintWriter("musicbrainz.xml");
-		    out.println(input);
-		    out.close();
+		    // Save the file to the disk
+		    Inout.saveFile(input);
 		    
 		} else {
-		    System.out.println("ERROR! " + response.getStatus());    
-		    System.out.println(response.getEntity());
-
+		    System.out.println("ERROR! " + response.getStatus());
 		}
 	}
 
-	// Build the query string which will be sent to the API
-	public String buildQuery(String type, String query, String limit, String offset) {
-		// Test if there's a null value
-		type 	= type 		!= null? type	:"recording";
-		query 	= query 	!= null? query	:"Sia";
-		limit 	= limit 	!= null? limit	:"25";
-		offset 	= offset 	!= null? offset	:"0";
-		
-		// Delete whitespaces
-		query = query.replace(" ", "%20");
-		
-		// Musicbrainz API
-		String api = "http://musicbrainz.org/ws/2/";
-		
-		// Concats type
-		api += type;
-		api += "?query=" + query;
-		api += "&limit=" + limit;
-		api += "&offset=" + offset;
-		
-		return api;
-	}
 	
 	// Test
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {

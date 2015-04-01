@@ -1,0 +1,15 @@
+{
+    "name": "Lastfm API Methods",
+    "Author" : "UVSQ",
+    "Year": "2015",
+    "Updated": "01/04/15",
+    "search" : [
+        {
+            "name" : "album",
+            "path" : "?method=album.search&album=",
+        }, {
+            "name" : "artist",
+            "path" : "?method=artist.search&artist="
+        }
+    ]
+}

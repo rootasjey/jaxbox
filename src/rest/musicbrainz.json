@@ -1,0 +1,23 @@
+{
+    "name": "Musicbrainz API Methods",
+    "Author" : "UVSQ",
+    "Year": "2015",
+    "Updated": "01/04/15",
+    "search" : [
+        {
+            "name" : "album",
+            "path" : "cdstub/",
+            "options" : [
+                "artist",
+                "title",
+                "barcode",
+                "comment",
+                "tracks",
+                "discid"
+            ]
+        }, {
+            "name" : "artist",
+            "path" : "artist/"
+        }
+    ]
+}
