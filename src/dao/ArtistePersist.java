@@ -21,6 +21,8 @@ public class ArtistePersist {
 			
 		}catch(Exception e){
 			e.getMessage();
+			System.out.println("erreur - catch");
+			System.out.println(e.getMessage());
 			tx.rollback();
 		}
 	}

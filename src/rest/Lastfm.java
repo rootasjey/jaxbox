@@ -37,6 +37,8 @@ public class Lastfm {
 		JSONObject json = new JSONObject(input);
 		JSONArray arraySearch = json.getJSONArray("search");
 		
+		
+		
 		for (int i = 0; i < arraySearch.length(); i++) {
 			
 			JSONObject searchItem = arraySearch.getJSONObject(i);

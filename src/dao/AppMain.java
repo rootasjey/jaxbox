@@ -1,7 +1,5 @@
 package dao;
 
-import java.util.Date;
-
 import bean.Artiste;
 
 public class AppMain {

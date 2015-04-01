@@ -71,7 +71,7 @@ public class Restcall {
 		    String input = response.readEntity(String.class);
 		    
 		    // Save the file to the disk
-		    Inout.saveFile(input);
+		    Inout.postprocess(input);
 		    
 		} else {
 		    System.out.println("ERROR! " + response.getStatus());

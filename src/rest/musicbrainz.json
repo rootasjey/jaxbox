@@ -16,8 +16,32 @@
                 "discid"
             ]
         }, {
+            "name" : "area",
+            "path" : "area/"
+        }, {
             "name" : "artist",
             "path" : "artist/"
+        }, {
+            "name" : "label",
+            "path" : "label/"
+        }, {
+            "name" : "place",
+            "path" : "place/"
+        }, {
+            "name" : "track",
+            "path" : "recording/"
+        }, {
+            "name" : "group",
+            "path" : "release-group/"
+        }, {
+            "name" : "release",
+            "path" : "release/"
+        }, {
+            "name" : "tag",
+            "path" : "tag/"
+        }, {
+            "name" : "work",
+            "path" : "work/"
         }
     ]
 }

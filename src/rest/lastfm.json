@@ -10,6 +10,15 @@
         }, {
             "name" : "artist",
             "path" : "?method=artist.search&artist="
+        }, {
+            "name" : "tag",
+            "path" : "?method=tag.search&tag="
+        }, {
+            "name" : "track",
+            "path" : "?method=track.search&track="
+        }, {
+            "name" : "venue",
+            "path" : "?method=venue.search&venue="
         }
     ]
 }
