@@ -5,12 +5,11 @@
 <hibernate-configuration>
     <session-factory>
     	<property name="hibernate.connection.driver_class">org.gjt.mm.mysql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/xmlproject</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/xmlproject</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
-    	<property name="hbm2ddl.auto">create</property>
+    	<property name="hibernate.hbm2ddl.auto">create</property>
     	
     	<property name="connexion.pool_size">1</property>
     	
@@ -18,5 +17,7 @@
     	
     	<property name="hibernate.current_session_context_class">thread</property>
     	<mapping class="bean.Artiste"/>
+    	<mapping class="bean.Album"/>
+    	<mapping class="bean.Track"/>
     </session-factory>
 </hibernate-configuration>

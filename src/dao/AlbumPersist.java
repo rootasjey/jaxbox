@@ -1,6 +1,5 @@
 package dao;
 
-
 import java.util.List;
 
 import org.hibernate.Query;
@@ -8,18 +7,17 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import bean.Album;
-import bean.Artiste;
 
-public class ArtistePersist {
-	public void ajouterArtiste(Artiste art){
+public class AlbumPersist {
+	public void ajouterAlbum(Album alb){
 		Session session = DBConnect.getSessionFactory().getCurrentSession();
 		
 		Transaction tx = null;
 		
 		try{
 			tx = session.beginTransaction();
-			System.out.println("eee");
-			session.save(art);
+			System.out.println("ALBUM");
+			session.save(alb);
 			
 			tx.commit();
 			
@@ -29,18 +27,21 @@ public class ArtistePersist {
 		}
 	}
 	
-	public List<Artiste> chercherAvecNomArtiste(String nomArti){
+	public List<Album> chercherAvecNomArtiste(String nomArti){
 		System.out.println("methoe recherche Album");
-		List<Artiste> listeAlbum = null;
+		//Album alb = new  Album();
+		List<Album> listeAlbum = null;
 		Transaction tx = null;
 		Session session = DBConnect.getSessionFactory().getCurrentSession();
 		
 		
 		try{
 			tx = session.beginTransaction();
-			Query req = session.createQuery("select a from Artiste as a where a.nomArtiste= :nomartiste ");
+			Query req = session.createQuery("select a from Album as a where a.artisteAlbum= :nomartiste ");
 			req.setString("nomartiste", nomArti);
 			listeAlbum = req.list();
+
+			//alb = listeAlbum.get(0);
 			tx.commit();
 		}catch(Exception e){
 			System.out.println(e.getMessage());

@@ -1,7 +1,6 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,19 +14,25 @@ import javax.persistence.Table;
 public class Artiste implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="identifiantArt")
+	private int identifiantArt;
+	
 	@Column(name="idArtiste")
-	private int idArtiste;
-	@Column(name="nomArtiste", nullable=false, length=30)
+	private String idArtiste;
+	
+	@Column(name="nomArtiste", nullable=true, length=30)
 	private String nomArtiste;
-	@Column(name="prenomArtiste", nullable=false, length=30)
+	
+	@Column(name="prenomArtiste", nullable=true, length=30)
 	private String prenomArtiste;
-	@Column(name="paysArtiste", nullable=false, length=30)
+	
+	@Column(name="paysArtiste", nullable=true, length=30)
 	private String paysArtiste;
 
-	public int getIdArtiste() {
+	public String getIdArtiste() {
 		return idArtiste;
 	}
-	public void setIdArtiste(int idArtiste) {
+	public void setIdArtiste(String idArtiste) {
 		this.idArtiste = idArtiste;
 	}
 	public String getNomArtiste() {
@@ -48,18 +53,20 @@ public class Artiste implements Serializable{
 	public void setPaysArtiste(String paysArtiste) {
 		this.paysArtiste = paysArtiste;
 	}
-	
-//	@Override
-//	public String toString() {
-//		return "Artiste [idArtiste=" + idArtiste + ", nomArtiste=" + nomArtiste
-//				+ ", prenomArtiste=" + prenomArtiste + ", sexeArtiste="
-//				+ sexeArtiste + ", aliasArtiste=" + aliasArtiste
-//				+ ", paysArtiste=" + paysArtiste + ", DateNaissArtiste="
-//				+ DateNaissArtiste + ", estEnActivite=" + estEnActivite
-//				+ ", tagDescription=" + tagDescription + "]";
-//	}
 	public Artiste() {
 		super();
+	}
+	public int getIdentifiantArt() {
+		return identifiantArt;
+	}
+	public void setIdentifiantArt(int identifiantArt) {
+		this.identifiantArt = identifiantArt;
+	}
+	@Override
+	public String toString() {
+		return "Artiste [identifiantArt=" + identifiantArt + ", idArtiste="
+				+ idArtiste + ", nomArtiste=" + nomArtiste + ", prenomArtiste="
+				+ prenomArtiste + ", paysArtiste=" + paysArtiste + "]";
 	}
 	
 	
