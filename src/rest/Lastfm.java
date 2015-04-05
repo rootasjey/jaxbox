@@ -11,16 +11,6 @@ public class Lastfm {
 	private String page = null;
 	private static String laftfmKey = "f5e757d925c049fed3dd25493e3df7b6";
 	
-	public HashMap<String, String> album = new HashMap<String, String>();
-	public HashMap<String, String> artist = new HashMap<String, String>();
-	public HashMap<String, String> chart = new HashMap<String, String>();
-	public HashMap<String, String> event = new HashMap<String, String>();
-	public HashMap<String, String> geo = new HashMap<String, String>();
-	public HashMap<String, String> group = new HashMap<String, String>();
-	public HashMap<String, String> tag = new HashMap<String, String>();
-	public HashMap<String, String> track = new HashMap<String, String>();
-	public HashMap<String, String> user = new HashMap<String, String>();
-	public HashMap<String, String> venue = new HashMap<String, String>();
 	
 	public HashMap<String, String> searchFunctions = new HashMap<String, String>();
 	public HashMap<String, String> getFunctions = new HashMap<String, String>();

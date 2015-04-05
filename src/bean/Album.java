@@ -35,6 +35,43 @@ public class Album implements Serializable{
 	@Column(name="commentAlbum", nullable=true, length=50)
 	private String commentAlbum;
 	
+	@Column(name="tracks", nullable=true, length=5)
+	private int tracks;
+	
+	@Column(name="url", nullable=true, length=200)
+	private String url;
+	
+	@Column(name="image", nullable=true, length=200)
+	private String image;
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public int getTracks() {
+		return tracks;
+	}
+	public void setTracks(int tracks) {
+		this.tracks = tracks;
+	}
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String score) {
+		this.score = score;
+	}
+	@Column(name="score", nullable=true, length=50)
+	private String score;
+	
+	
 	public String getIdAlbum() {
 		return idAlbum;
 	}
@@ -74,6 +111,15 @@ public class Album implements Serializable{
 	}
 	public void setCommentAlbum(String commentAlbum) {
 		this.commentAlbum = commentAlbum;
+	}
+	@Override
+	public String toString() {
+		return "Album [identifiantAlb=" + identifiantAlb + ", idAlbum="
+				+ idAlbum + ", titreAlbum=" + titreAlbum + ", artisteAlbum="
+				+ artisteAlbum + ", idArtisteAlbum=" + idArtisteAlbum
+				+ ", codebareAlbum=" + codebareAlbum + ", commentAlbum="
+				+ commentAlbum + ", tracks=" + tracks + ", url=" + url
+				+ ", image=" + image + ", score=" + score + "]";
 	}
 	
 }

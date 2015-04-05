@@ -8,7 +8,7 @@ import javax.xml.transform.TransformerException;
 import org.xml.sax.SAXException;
 
 public interface StyliserInterface {
-	public void transform(String xml, String xslt) 
+	public void transform(String xml, String xslt, String fileName) 
 			throws TransformerException, TransformerConfigurationException, 
 			SAXException, IOException;
 }

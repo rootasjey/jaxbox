@@ -13,6 +13,9 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import dao.PersistAll;
+import xml.Sax;
+
 /*
  * A Java Class to send API calls
  */
@@ -49,11 +52,11 @@ public class Restcall {
 	}
 	
 	// Query the API
-	public void search() throws ParserConfigurationException, SAXException, IOException {
+	public void search(String source) throws ParserConfigurationException, SAXException, IOException {
 		Client client = ClientBuilder.newClient();
 		
 //		String source = "musicbrainz";
-		String source = "lastfm";
+//		String source = "lastfm";
 		String api = buildQuery(source, "album", "Alicia Keys", "25", null);
 		System.out.println(api);
 		
@@ -71,7 +74,7 @@ public class Restcall {
 		    String input = response.readEntity(String.class);
 		    
 		    // Save the file to the disk
-		    Inout.postprocess(input);
+		    Inout.postprocess(input, source);
 		    
 		} else {
 		    System.out.println("ERROR! " + response.getStatus());
@@ -82,7 +85,12 @@ public class Restcall {
 	// Test
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		Restcall restcall = new Restcall();
-		restcall.search();
+		restcall.search("lastfm");
+		restcall.search("musicbrainz");
+		System.out.println("---------------------");
+		System.out.println("RESTCALL FINISHED");
+		
+		PersistAll.persistAlbums(Sax.albumsList);
 	}
 
 }
