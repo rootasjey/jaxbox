@@ -1,0 +1,49 @@
+@CHARSET "ISO-8859-1";
+
+
+
+html,
+body {
+    margin  : 0;
+    padding : 0;
+    height  : 100%;
+    font-family: open_sanslight;
+}
+
+#container {
+    min-height: 100%;
+    position: relative;
+}
+
+#header {
+    padding: 10px;
+    background: #E74C3C;
+
+    color: white;
+}
+
+#body {
+    padding: 10px;
+    padding-bottom: 220px;
+}
+
+.center-content {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+#footer {
+    bottom: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 160px;
+    //padding: 10px;
+    background: #eee;
+    transition: 0.5s;
+}
+    #footer:hover {
+        height: 180px;
+        transition: 0.5s;
+    }

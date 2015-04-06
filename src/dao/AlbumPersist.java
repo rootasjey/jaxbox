@@ -28,7 +28,7 @@ public class AlbumPersist {
 	}
 	
 	public List<Album> chercherAvecNomArtiste(String nomArti){
-		System.out.println("methoe recherche Album");
+		System.out.println("methode recherche Album");
 		//Album alb = new  Album();
 		List<Album> listeAlbum = null;
 		Transaction tx = null;
@@ -41,7 +41,6 @@ public class AlbumPersist {
 			req.setString("nomartiste", nomArti);
 			listeAlbum = req.list();
 
-			//alb = listeAlbum.get(0);
 			tx.commit();
 		}catch(Exception e){
 			System.out.println(e.getMessage());

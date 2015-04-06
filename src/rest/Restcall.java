@@ -13,7 +13,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import dao.PersistAll;
+import dao.Transit;
 import xml.Sax;
 
 /*
@@ -52,12 +52,12 @@ public class Restcall {
 	}
 	
 	// Query the API
-	public void search(String source) throws ParserConfigurationException, SAXException, IOException {
+	public void search(String source, String type, String name) throws ParserConfigurationException, SAXException, IOException {
 		Client client = ClientBuilder.newClient();
 		
 //		String source = "musicbrainz";
 //		String source = "lastfm";
-		String api = buildQuery(source, "album", "Alicia Keys", "25", null);
+		String api = buildQuery(source, type, name, "25", null);
 		System.out.println(api);
 		
 		WebTarget resource = client.target(api);
@@ -85,12 +85,12 @@ public class Restcall {
 	// Test
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		Restcall restcall = new Restcall();
-		restcall.search("lastfm");
-		restcall.search("musicbrainz");
+		restcall.search("lastfm", "album", "Alicia Keys");
+		restcall.search("musicbrainz", "album", "Alicia Keys");
 		System.out.println("---------------------");
 		System.out.println("RESTCALL FINISHED");
 		
-		PersistAll.persistAlbums(Sax.albumsList);
+		Transit.persistAlbums(Sax.albumsList);
 	}
 
 }
