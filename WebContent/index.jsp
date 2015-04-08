@@ -1,5 +1,12 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+  <%@ page import="bean.Album" %>
+  <%@ page import="bean.Artiste" %>
+  <%@ page import="bean.Track" %>
+  <%@ page import="java.util.List" %>
+    
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,6 +30,7 @@
     
     <!-- Home-made style -->
     <link href="stylesheets/search.css" rel="stylesheet">
+    <link href="stylesheets/layout.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -36,7 +44,10 @@
   </head>
 
   <body>
-
+	<div class="bg-cover">
+		<img alt="bg" src="img/music-bg2.jpg">
+	</div>
+			
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -52,19 +63,61 @@
               </nav>
             </div>
           </div>
-
+			
+			
+			
           <div class="inner cover">
             <h1 class="cover-heading">jaxbox</h1>
             <p class="lead">A music search engine by uvsq's students.</p>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Learn more</a>
             </p>
+            
+            <!-- Select media -->
+            <div class="btn-group" role="group" aria-label="media">
+			  <button type="button" class="btn btn-default">Albums</button>
+			  <button type="button" class="btn btn-default">Artists</button>
+			  <button type="button" class="btn btn-default">Tracks</button>
+			</div>
+			
+			<br>
+			<br>
+            
             <form class="search-container" action="search">
 				  <input id="search-box" type="text" class="search-box" name="q" />
 				  <label for="search-box"><span class="glyphicon glyphicon-search search-icon"></span></label>
 				  <input type="submit" id="search-submit" />
 				</form>
           </div>
+          
+          <div>
+		<% if (session.getAttribute("list") == null) return;
+		Album[] maliste =(Album[]) session.getAttribute("list");
+			for (Album album : maliste) {
+				%>
+				<% if (false) {
+					%>
+					<div class="album" style="background: url('<% album.getImage(); %>')"> 
+					<%
+				} 
+				 else {
+					%>
+						<div class="album"> 
+					<%
+				}  %>
+				
+					<div class="abum-title"> 
+						<%= album.getTitreAlbum() %>
+					</div> 
+					
+					<div class="album-artist">
+						<% album.getArtisteAlbum(); %>
+					</div>
+				</div>
+				
+		<%  } %>
+
+		</div>
 
           <div class="mastfoot">
             <div class="inner">

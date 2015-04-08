@@ -7,7 +7,7 @@ console.log("toto");
 
 //This function is fired as soon as this file is loaded
 (function () {
-	sendInputRequest();
+	//sendInputRequest();
 })();
 
 // Send an ajax request to get the repport in a html format

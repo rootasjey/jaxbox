@@ -1,15 +1,6 @@
 @CHARSET "ISO-8859-1";
 
 
-
-html,
-body {
-    margin  : 0;
-    padding : 0;
-    height  : 100%;
-    font-family: open_sanslight;
-}
-
 #container {
     min-height: 100%;
     position: relative;
@@ -31,6 +22,48 @@ body {
     width: 500px;
     margin: auto;
     text-align: center;
+}
+
+.album {
+	width: 200px;
+	height: 200px;
+	//background: url("../img/album-cover-sample.jpg");
+	background-color: white;
+	background: url("../img/Treble Clef.jpg") 30px 30px no-repeat;
+	
+	color: black;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	
+	border-style: solid;
+    border-width: 15px;
+    border-color: #eee;
+    border-radius: 5px;
+    
+    cursor: pointer;
+    
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.album:hover {
+	opacity: 1;
+    transition: 0.5s;
+}
+
+.abum-title {
+	bottom: 0;
+	position: absolute;
+	margin: auto;
+	
+	text-align: center;
+	font-size: 1.3em;
+	margin-left: 10px;
+}
+
+.album-artist {
+	
 }
 
 #footer {

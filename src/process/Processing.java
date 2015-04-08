@@ -44,7 +44,10 @@ public class Processing {
 			if (attemps > 2) return null;
 			attemps++;
 			
-			return searchAlbumByAuthor(author);
+			albums = (ArrayList<Album>) Transit.getAlbumsByAuthor(author);
+			
+			
+			return albums;
 			
 		} else {
 			// Return database results			
