@@ -55,6 +55,7 @@ public class Inout {
 	public static void saveFile(String input, String source) throws IOException {
 		String filePath = "src/rest/" + source + ".xml";
 	     input = input.replace("><", ">\n<");
+	     
 	    Writer out = new BufferedWriter(
 	    		new OutputStreamWriter(
 	    				new FileOutputStream(filePath), "UTF-8"));
@@ -62,16 +63,6 @@ public class Inout {
 			out.write(input); 	// write into the file
 			out.close();		// close the file
 			
-			if (source.equals("lastfm")) {
-				// We want this source to be the main
-				StyliserInterface styliser = new Styliser();
-				
-				register(styliser, filePath, source);
-			} else {
-				// For others sources
-				// Parse with SAX the other XML's API (Musicbrainz)
-				Sax.compare("src/rest/" + source + ".xml");
-			}
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -80,16 +71,53 @@ public class Inout {
 	}
 	
 	// Launch these methods after a previous process
-	public static void postprocess(String input, String source) throws IOException {
+	public static void postprocess(String input, String source, String type) 
+			throws IOException, ParserConfigurationException, SAXException {
+		
+		// Build the file path
+		String filePath = "src/rest/" + source + ".xml";
+		
+		// Save the file locally
 		saveFile(input, source);
+		
+		// Test the source
+		if (source.equals("lastfm")) {
+			// We want this source to be the main
+			StyliserInterface styliser = new Styliser();
+			register(styliser, filePath, source, type);
+			
+		} else {
+			
+			// For others sources
+			// Parse with SAX the other XML's API (Musicbrainz)
+			Sax.compare("src/rest/" + source + ".xml");
+		}
 	}
 	
 	// Callback method
-	public static void register(StyliserInterface styliser, String file, String fileName) 
+	public static void register(StyliserInterface styliser, String file, String fileName, String type) 
 			throws ParserConfigurationException {
 		try {
-			// Format the xml
-			styliser.transform(file, "src/xml/album.xsl", fileName);
+			
+			// Test the query's type
+			if (type.equals("album")) {
+				// Format the xml
+				styliser.transform(file, "src/xml/album.xsl", fileName);
+				Sax.mediaType = "album";
+				
+			} else if (type.equals("artist")) {
+				// Format the xml
+				styliser.transform(file, "src/xml/artist.xsl", fileName);
+				Sax.mediaType = "artist";
+
+			} else if (type.equals("track")) {
+				// Format the xml
+				styliser.transform(file, "src/xml/track.xsl", fileName);
+				Sax.mediaType = "track";
+				
+			}
+			
+
 			Sax.parse("src/xml/" + fileName + ".xml");
 			
 		} catch (TransformerException | SAXException | IOException e) {

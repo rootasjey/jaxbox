@@ -4,12 +4,16 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
 import bean.Album;
+import bean.Artiste;
+import bean.Track;
 
 public class SaxLastfm extends DefaultHandler {
-	private String currentTag="";
-	private String tagValue="";
+	private String currentTag = "";
+	private String tagValue = "";
 	
 	private Album album = null;
+	private Artiste artist = null;
+	private Track track	= null;
 	
 	public SaxLastfm() {
 		super();
@@ -31,21 +35,37 @@ public class SaxLastfm extends DefaultHandler {
 		
 		currentTag = name;
 		
-		// If we encounter these tags, we create a new item
-		if (currentTag.equals("album")) {
-			
-			if (album != null) {
-				// Add the title object to a map to recover it faster in the future
-//				String localName = xmlObject.get("title") != null? xmlObject.get("title"):xmlObject.get("name");
+		if (Sax.mediaType.equals("album")) {
+			// If we encounter these tags, we create a new item
+			if (currentTag.equals("album")) {
 				
-				// If there was something in xmlObject, add it to the list
-//				Sax.arrayXMLObjects.add(xmlObject);
-//				xmlObject = null;
-				
-				Sax.albumsList.put(album.getTitreAlbum(), album);
-				album = null;
+				if (album != null) {
+					Sax.albumList.put(album.getTitreAlbum(), album);
+					album = null;
+				}
+				album = new Album();
 			}
-			album = new Album();
+			
+		} else if (Sax.mediaType.equals("artist")) {
+			// If we encounter these tags, we create a new item
+			if (currentTag.equals("artist")) {
+				
+				if (artist != null) {
+					Sax.artistList.put(artist.getNomArtiste(), artist);
+					artist = null;
+				}
+				artist = new Artiste();
+			}
+		} else if (Sax.mediaType.equals("track")) {
+			// If we encounter these tags, we create a new item
+			if (currentTag.equals("track")) {
+				
+				if (track != null) {
+					Sax.trackList.put(track.getTitle(), track);
+					track = null;
+				}
+				track = new Track();
+			}
 		}
 	}
 	
@@ -53,28 +73,82 @@ public class SaxLastfm extends DefaultHandler {
 		
 	}
 	
+	// When a value is occurred
 	public void characters(char ch[], int start, int length) {
 		tagValue = new String(ch, start, length);
 		
 		if (tagValue.length() >= 2) {
-//			xmlObject.put(currentTag, tagValue);
-			
-			switch (currentTag) {
-			case "name":
-				album.setTitreAlbum(tagValue);
-				break;
-			case "artist":
-				album.setArtisteAlbum(tagValue);
-				break;
-			case "url":
-				album.setUrl(tagValue);
-				break;
-			case "image":
-				album.setImage(tagValue);
-				break;
-			default:
-				break;
+			if (Sax.mediaType.equals("album")) {
+				charactersAlbum();
+			} else if (Sax.mediaType.equals("artist")) {
+				charactersArtist();
+			} else if (Sax.mediaType.equals("track")) {
+				charactersTrack();
 			}
+			
+		}
+	}
+	
+	// If we want to parse tag value according to album
+	public void charactersAlbum() {
+		switch (currentTag) {
+		case "name":
+			album.setTitreAlbum(tagValue);
+			break;
+		case "artist":
+			album.setArtisteAlbum(tagValue);
+			break;
+		case "url":
+			album.setUrl(tagValue);
+			break;
+		case "image":
+			album.setImage(tagValue);
+			break;
+		default:
+			break;
+		}
+	}
+	
+	// If we want to parse tag value according to artist
+	public void charactersArtist() {
+		switch (currentTag) {
+		case "mbid":
+			artist.setIdArtiste(tagValue);
+			break;
+		case "name":
+			artist.setNomArtiste(tagValue);
+			break;
+		case "url":
+			artist.setUrl(tagValue);
+			break;
+		case "image":
+			artist.setImage(tagValue);
+			break;
+		default:
+			break;
+		}
+	}
+	
+	// If we want to parse tag value according to song
+	public void charactersTrack() {
+		switch (currentTag) {
+		case "name":
+			track.setTitle(tagValue);
+			break;
+		case "artist":
+			track.setArtist_name(tagValue);
+			break;
+		case "url":
+			track.setUrl(tagValue);
+			break;
+		case "image":
+			track.setImage(tagValue);
+			break;
+		case "listeners":
+			track.setListeners(tagValue);
+			break;
+		default:
+			break;
 		}
 	}
 }

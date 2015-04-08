@@ -11,6 +11,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import bean.Album;
+import bean.Artiste;
+import bean.Track;
 
 
 @WebService
@@ -18,4 +20,6 @@ import bean.Album;
 public interface JaxboxServiceInterface {
 	@WebMethod String getHelloWorld(String name);
 	@WebMethod Album[] searchAlbumArtist(String artist) throws ParserConfigurationException, SAXException, IOException;
+	@WebMethod Artiste[] searchArtists(String artist) throws ParserConfigurationException, SAXException, IOException;
+	@WebMethod Track[] searchTracks(String track) throws ParserConfigurationException, SAXException, IOException;
 }

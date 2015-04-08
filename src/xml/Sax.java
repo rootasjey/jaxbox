@@ -12,13 +12,17 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import bean.Album;
+import bean.Artiste;
+import bean.Track;
 
 
 
 public class Sax {
-	public static String fileReference = null;
+	public static String mediaType = null;
 	
-	public static HashMap<String, Album> albumsList = new HashMap<String, Album>();
+	public static HashMap<String, Album> albumList = new HashMap<String, Album>();
+	public static HashMap<String, Artiste> artistList = new HashMap<String, Artiste>();
+	public static HashMap<String, Track> trackList = new HashMap<String, Track>();
 	
 	public Sax() {
 		super();
@@ -39,7 +43,6 @@ public class Sax {
 	public void parseAndCompare(String file, String fileToCompare) 
 			throws ParserConfigurationException, SAXException, IOException {
 		parse(file);
-//		this.fileReference = fileToCompare;
 	}
 	
 	public static void compare(String file) throws SAXException, IOException {

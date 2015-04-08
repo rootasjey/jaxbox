@@ -30,7 +30,7 @@ public class ArtistePersist {
 	}
 	
 	public List<Artiste> chercherAvecNomArtiste(String nomArti){
-		System.out.println("methoe recherche Album");
+		System.out.println("query artist");
 		List<Artiste> listeAlbum = null;
 		Transaction tx = null;
 		Session session = DBConnect.getSessionFactory().getCurrentSession();

@@ -28,6 +28,53 @@ public class Artiste implements Serializable{
 	
 	@Column(name="paysArtiste", nullable=true, length=30)
 	private String paysArtiste;
+	
+	@Column(name="url", nullable=true, length=200)
+	private String url;
+	
+	@Column(name="image", nullable=true, length=200)
+	private String image;
+	
+	@Column(name="score", nullable=true, length=50)
+	private String score;
+	
+	@Column(name="description", nullable=true, length=200)
+	private String description;
+	
+	@Column(name="listeners", nullable=true, length=30)
+	private String listeners;
+	
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String score) {
+		this.score = score;
+	}
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getListeners() {
+		return listeners;
+	}
+	public void setListeners(String listeners) {
+		this.listeners = listeners;
+	}
 
 	public String getIdArtiste() {
 		return idArtiste;

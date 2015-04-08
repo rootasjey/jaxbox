@@ -43,6 +43,12 @@ public class Musicbrainz {
 		String url = api;
 		String media = this.searchFunctions.get(type);
 		
+		// Check if the media wanted exists (if there's a mistake in the keyword)
+		if (media == null) {
+			System.out.println("Cannot search for [" + type + "] (This keyword doesn't exist).");
+			return null;
+		}
+		
 		// Delete whitespaces
 		query = query.replace(" ", "%20");
 		

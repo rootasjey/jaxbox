@@ -60,6 +60,8 @@ public class Restcall {
 		String api = buildQuery(source, type, name, "25", null);
 		System.out.println(api);
 		
+		if (api == null) return;
+		
 		WebTarget resource = client.target(api);
 
 		Builder request = resource.request();
@@ -74,7 +76,7 @@ public class Restcall {
 		    String input = response.readEntity(String.class);
 		    
 		    // Save the file to the disk
-		    Inout.postprocess(input, source);
+		    Inout.postprocess(input, source, type);
 		    
 		} else {
 		    System.out.println("ERROR! " + response.getStatus());
@@ -85,12 +87,21 @@ public class Restcall {
 	// Test
 	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		Restcall restcall = new Restcall();
-		restcall.search("lastfm", "album", "Alicia Keys");
-		restcall.search("musicbrainz", "album", "Alicia Keys");
+		restcall.search("lastfm", "track", "Lost One");
+		restcall.search("musicbrainz", "track", "Lost One");
 		System.out.println("---------------------");
 		System.out.println("RESTCALL FINISHED");
 		
-		Transit.persistAlbums(Sax.albumsList);
+		if (Sax.mediaType.equals("album")) {
+			Transit.persistAlbums(Sax.albumList);
+			
+		} else if (Sax.mediaType.equals("artist")) {
+			Transit.persistArtists(Sax.artistList);
+			
+		} else if (Sax.mediaType.equals("track")) {
+			Transit.persistTracks(Sax.trackList);
+		}
+		
 	}
 
 }

@@ -44,6 +44,10 @@ public class Album implements Serializable{
 	@Column(name="image", nullable=true, length=200)
 	private String image;
 	
+	@Column(name="score", nullable=true, length=50)
+	private String score;
+	
+	
 	public String getImage() {
 		return image;
 	}
@@ -67,10 +71,7 @@ public class Album implements Serializable{
 	}
 	public void setScore(String score) {
 		this.score = score;
-	}
-	@Column(name="score", nullable=true, length=50)
-	private String score;
-	
+	}	
 	
 	public String getIdAlbum() {
 		return idAlbum;
