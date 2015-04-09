@@ -19,6 +19,8 @@ a:hover {
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
+  
+  transition: 0.5s;
 }
 
 
@@ -34,7 +36,7 @@ body {
  .bg-cover {
  	height: 100%;
  	width: 100%;
- 	opacity: 0.5;
+ 	opacity: 0.8;
  	display: block;
  	overflow: hidden;
 

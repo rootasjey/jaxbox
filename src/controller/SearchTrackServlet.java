@@ -2,9 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,19 +16,20 @@ import javax.xml.ws.Service;
 import org.xml.sax.SAXException;
 
 import soap.JaxboxServiceInterface;
-import bean.Album;
+import bean.Artiste;
+import bean.Track;
 
 /**
- * Servlet implementation class SearchServlet
+ * Servlet implementation class SearchTrackServlet
  */
-@WebServlet("/SearchServlet")
-public class SearchServlet extends HttpServlet {
+@WebServlet("/SearchTrackServlet")
+public class SearchTrackServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchServlet() {
+    public SearchTrackServlet() {
         super();
     }
 
@@ -46,7 +44,7 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("search albums--->");
+		System.out.println("search track--->");
 		String requestTerms = request.getParameter("q");
 		
 		
@@ -58,20 +56,20 @@ public class SearchServlet extends HttpServlet {
 		Service service = Service.create(url, qname);
 		JaxboxServiceInterface jaxbox = service.getPort(JaxboxServiceInterface.class);
 		
-		Album[] albums;
+		Track[] tracks;
 		
 		try {
 			System.out.println("in the try------------");
-			albums = jaxbox.searchAlbumArtist(requestTerms);
+			tracks = jaxbox.searchTracks(requestTerms);
 			
-			System.out.println("[client] size: " + albums.length);
-//			for (Album album : albums) {
-//				System.out.println(album);
-//			}
+			System.out.println("[client] track size: " + tracks.length);
+			for (Track track : tracks) {
+				System.out.println(track);
+			}
 			
 			HttpSession session = request.getSession(true);
-			session.setAttribute("mediaType", "albums");
-			session.setAttribute("list", albums);
+			session.setAttribute("mediaType", "tracks");
+			session.setAttribute("list", tracks);
 			
 			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 			
@@ -80,7 +78,6 @@ public class SearchServlet extends HttpServlet {
 		} catch (SAXException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 }

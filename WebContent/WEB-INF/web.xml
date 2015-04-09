@@ -19,8 +19,7 @@
     <servlet-name>index</servlet-name>
     <url-pattern>/index.html</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>search</display-name>
     <servlet-name>search</servlet-name>
@@ -29,5 +28,26 @@
   <servlet-mapping>
     <servlet-name>search</servlet-name>
     <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchArtist</display-name>
+    <servlet-name>searchArtist</servlet-name>
+    <servlet-class>controller.SearchArtistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchArtist</servlet-name>
+    <url-pattern>/searchartist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>searchTrack</display-name>
+    <servlet-name>searchTrack</servlet-name>
+    <servlet-class>controller.SearchTrackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchtrack</servlet-name>
+    <url-pattern>/searchtrack</url-pattern>
   </servlet-mapping>
 </web-app>

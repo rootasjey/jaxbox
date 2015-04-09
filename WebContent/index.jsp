@@ -45,7 +45,7 @@
 
   <body>
 	<div class="bg-cover">
-		<img alt="bg" src="img/music-bg2.jpg">
+		<img alt="bg" src="img/sicences_music.jpg">
 	</div>
 			
     <div class="site-wrapper">
@@ -56,7 +56,7 @@
               <h3 class="masthead-brand">jaxbox</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
+                  <li class="active"><a href="/jaxbox">Home</a></li>
                   <li><a href="#">Features</a></li>
                   <li><a href="#">Docs</a></li>
                 </ul>
@@ -75,9 +75,9 @@
             
             <!-- Select media -->
             <div class="btn-group" role="group" aria-label="media">
-			  <button type="button" class="btn btn-default">Albums</button>
-			  <button type="button" class="btn btn-default">Artists</button>
-			  <button type="button" class="btn btn-default">Tracks</button>
+			  <button type="button" class="btn btn-default albums">Albums</button>
+			  <button type="button" class="btn btn-default artists">Artists</button>
+			  <button type="button" class="btn btn-default tracks">Tracks</button>
 			</div>
 			
 			<br>
@@ -92,31 +92,89 @@
           
           <div>
 		<% if (session.getAttribute("list") == null) return;
-		Album[] maliste =(Album[]) session.getAttribute("list");
-			for (Album album : maliste) {
-				%>
-				<% if (false) {
+			  String mediaType = (String) session.getAttribute("mediaType");
+			  
+			if (mediaType.equals("albums")) {
+				Album[] maliste =(Album[]) session.getAttribute("list");
+				for (Album album : maliste) {
 					%>
-					<div class="album" style="background: url('<% album.getImage(); %>')"> 
-					<%
-				} 
-				 else {
-					%>
-						<div class="album"> 
-					<%
-				}  %>
-				
-					<div class="abum-title"> 
-						<%= album.getTitreAlbum() %>
-					</div> 
+					<% if (false) {
+						%>
+						<div class="album" style="background: url('<% album.getImage(); %>')"> 
+						<%
+					} 
+					 else {
+						%>
+							<div class="album"> 
+						<%
+					}  %>
 					
-					<div class="album-artist">
-						<% album.getArtisteAlbum(); %>
+						<div class="abum-title"> 
+							<%= album.getTitreAlbum() %>
+						</div> 
+						
+						<div class="album-artist">
+							<% album.getArtisteAlbum(); %>
+						</div>
 					</div>
-				</div>
+			<%  } %>
+			<% }  
+			else if (mediaType.equals("artists")) {
+			
+				Artiste[] maliste =(Artiste[]) session.getAttribute("list");
+				for (Artiste artist : maliste) {
+					%>
+					<% if (false) {
+						%>
+						<div class="artist" style="background: url('<% artist.getImage(); %>')"> 
+						<%
+					} 
+					 else {
+						%>
+							<div class="artist"> 
+						<%
+					}  %>
+					
+						<div class="artist-title"> 
+							<%= artist.getNomArtiste() %>
+						</div> 
+						
+						<div class="artist-artist">
+							<% artist.getScore(); %>
+						</div>
+					</div>
+			<%  } %>
 				
-		<%  } %>
-
+			<%}
+			
+			else if (mediaType.equals("tracks")) {
+			
+				Track[] maliste =(Track[]) session.getAttribute("list");
+				for (Track track : maliste) {
+					%>
+					<% if (false) {
+						%>
+						<div class="track" style="background: url('<% track.getImage(); %>')"> 
+						<%
+					} 
+					 else {
+						%>
+							<div class="track"> 
+						<%
+					}  %>
+					
+						<div class="track-title"> 
+							<%= track.getTitle() %>
+						</div> 
+						
+						<div class="track-artist">
+							<% track.getScore(); %>
+						</div>
+					</div>
+			<%  } %>
+				
+			<%}
+			%>
 		</div>
 
           <div class="mastfoot">
