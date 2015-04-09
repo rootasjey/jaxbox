@@ -69,7 +69,7 @@
 	width: 200px;
 	height: 200px;
 	cursor: pointer;
-	background: url("../img/album.jpg") -60px -80px;
+	background: url("../img/artist.jpg") -60px -80px;
 	background-color: white;
 	
 	color: black;
@@ -106,7 +106,7 @@
 	width: 200px;
 	height: 200px;
 	cursor: pointer;
-	background: url("../img/album.jpg") -60px -80px;
+	background: url("../img/track.jpg") -60px -80px;
 	background-color: white;
 	
 	color: black;

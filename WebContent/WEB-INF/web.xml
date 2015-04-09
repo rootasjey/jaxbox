@@ -42,8 +42,8 @@
   
   <servlet>
     <description></description>
-    <display-name>searchTrack</display-name>
-    <servlet-name>searchTrack</servlet-name>
+    <display-name>searchtrack</display-name>
+    <servlet-name>searchtrack</servlet-name>
     <servlet-class>controller.SearchTrackServlet</servlet-class>
   </servlet>
   <servlet-mapping>

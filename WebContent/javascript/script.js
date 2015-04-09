@@ -28,7 +28,7 @@ function clickMediaType() {
 	$(".tracks").click(function () {
 		console.log("tracks");
 		buttonClicked($(this), buttons);
-		$(".search-container").attr("action", "track");
+		$(".search-container").attr("action", "searchtrack");
 	});
 }
 
