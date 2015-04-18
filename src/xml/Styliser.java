@@ -11,12 +11,11 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.xml.sax.SAXException;
 
-public class Styliser implements StyliserInterface {
+public class Styliser implements StyliserInterface{
 
 	public Styliser() {
 	}
 
-	@Override
 	public void transform(String xml, String xslt, String fileName) throws TransformerException, TransformerConfigurationException,
 	SAXException, IOException    
 	{
